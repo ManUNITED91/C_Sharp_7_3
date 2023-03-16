@@ -9,5 +9,5 @@ void S(int n)
         a++;
     }
 }
-Console.WriteLine("Ввидите число: ");
+Console.WriteLine("Введите число: ");
 S(int.Parse(Console.ReadLine()!));

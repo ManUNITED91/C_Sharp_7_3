@@ -19,6 +19,7 @@ void PrintArr(int[] arr)
     {
         Console.Write($"{arr[i]} ");
     }
+    Console.WriteLine();
 }
 Console.WriteLine("Write the number of elements in the array");
 int lenght = int.Parse(Console.ReadLine()!);

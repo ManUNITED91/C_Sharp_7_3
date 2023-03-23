@@ -7,7 +7,7 @@ int[] CreateArr(int n, int firstNum, int lastNum)
     int[] arr = new int[n];
     for (int i = 0; i < n; i++)
     {
-        arr[i] = new Random().Next(firstNum, lastNum);
+        arr[i] = new Random().Next(firstNum, lastNum + 1);
     }
     return arr;
 }

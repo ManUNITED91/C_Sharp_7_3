@@ -34,13 +34,9 @@ void Diff(double[] arr)
         {
             maxVal = arr[i];
         }
-        else
-        {
-
-        }
     }
 
-    Console.WriteLine($"The difference between max el and min el = {maxVal - minVal}");
+    Console.WriteLine($"The difference between max el {maxVal} and min el {minVal} = {maxVal - minVal}");
 }
 Console.WriteLine("Write the number of elements in the array");
 int lenght = int.Parse(Console.ReadLine()!);

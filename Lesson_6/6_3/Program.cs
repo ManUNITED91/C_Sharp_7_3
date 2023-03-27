@@ -10,5 +10,5 @@ void Fibonacci (int n)
         (a,b) = (b,a+b);
     }
 }
-int a = int.Parse(Console.ReadLine()!);
-Fibonacci(a);
+int c = int.Parse(Console.ReadLine()!);
+Fibonacci(c);

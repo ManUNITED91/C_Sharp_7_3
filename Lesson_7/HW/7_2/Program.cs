@@ -37,6 +37,7 @@ string Position(int[,] arr, int rowPos, int columnPos)
     if (row >= rowPos && column >= columnPos && rowPos > 0 && columnPos > 0)
     {
         return $"Position is in the array,value = {arr[rowPos - 1, columnPos - 1]}";
+        // как указать позиции,чтобы они тоже выводились
     }
     return "This position isn't in the array";
 }

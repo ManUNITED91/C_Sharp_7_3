@@ -39,7 +39,7 @@ string Position(int[,] arr, int rowPos, int columnPos)
         return $"Position is in the array,value = {arr[rowPos - 1, columnPos - 1]}";
         // как указать позиции,чтобы они тоже выводились
     }
-    return "This position isn't in the array";
+    return $"This position isn't in the array";
 }
 
 Console.Write("Enter the number of rows: ");

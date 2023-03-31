@@ -1,6 +1,10 @@
-﻿// 0. Задайте двумерный массив размером m×n, 
-//    заполненный случайными целыми числами.
-void Print(int[,] arr)
+﻿//  Задайте двумерный массив размером m×n, заполненный 
+// случайными вещественными числами.
+// m = 3, n = 4.
+// 0,5 7 -2 -0,2
+// 1 -3,3 8 -9,9
+// 8 7,8 -7,1 9
+void Print(double[,] arr)
 {
     int row_size = arr.GetLength(0);
     int column_size = arr.GetLength(1);
@@ -14,13 +18,13 @@ void Print(int[,] arr)
     Console.WriteLine();
 }
 
-int[,] MassNums(int row, int column, int from, int to)
+double[,] MassNums(int row, int column, int from, int to)
 {
-    int[,] arr = new int[row, column];
+    double[,] arr = new double[row, column];
 
     for (int i = 0; i < row; i++)      
         for (int j = 0; j < column; j++)        
-            arr[i, j] = new Random().Next(from, to + 1);                
+            arr[i, j] = Math.Round(new Random().NextDouble()*(from - to)+to,3);                
     
     return arr;
 }
@@ -35,6 +39,6 @@ int start = int.Parse(Console.ReadLine()!);
 Console.Write("Enter the max number of massive ");
 int stop = int.Parse(Console.ReadLine()!);
 
-int[,] mass = MassNums(row_num, column_num, start, stop);
+double[,] mass = MassNums(row_num, column_num, start, stop);
 
 Print(mass);

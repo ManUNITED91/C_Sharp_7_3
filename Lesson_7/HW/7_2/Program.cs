@@ -36,10 +36,10 @@ string Position(int[,] arr, int rowPos, int columnPos)
     int column = arr.GetLength(1);
     if (row >= rowPos && column >= columnPos && rowPos > 0 && columnPos > 0)
     {
-        return $"Position is in the array,value = {arr[rowPos - 1, columnPos - 1]}";
-        // как указать позиции,чтобы они тоже выводились
+        return $"Position [{rowPos},{columnPos}] is in the array,value = {arr[rowPos - 1, columnPos - 1]}";
+        
     }
-    return $"This position isn't in the array";
+    return $"This position [{rowPos},{columnPos}] isn't in the array";
 }
 
 Console.Write("Enter the number of rows: ");

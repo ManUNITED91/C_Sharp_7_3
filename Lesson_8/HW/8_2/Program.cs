@@ -1,13 +1,11 @@
-﻿// Задайте двумерный массив. Напишите программу, которая упорядочит по убыванию 
-// элементы каждой строки двумерного массива.
+﻿// Задайте прямоугольный двумерный массив. Напишите программу, которая будет 
+// находить строку с наименьшей суммой элементов.
 // Например, задан массив:
 // 1 4 7 2
 // 5 9 2 3
 // 8 4 2 4
-// В итоге получается вот такой массив:
-// 7 4 2 1
-// 9 5 3 2
-// 8 4 4 2
+// 5 2 6 7
+// Программа считает сумму элементов в каждой строке и выдаёт номер строки с наименьшей суммой элементов: 1 строка
 void Print(int[,] arr)
 {
     int row_size = arr.GetLength(0);
@@ -23,7 +21,6 @@ void Print(int[,] arr)
 }
 
 int[,] MassNums(int row, int column, int from, int to)
-
 {
     int[,] arr = new int[row, column];
 
@@ -33,24 +30,36 @@ int[,] MassNums(int row, int column, int from, int to)
 
     return arr;
 }
-
-void Descending(int[,] arr)
+int[] MinSum(int[,] arr)
 {
+    int[] minlValue = new int[arr.GetLength(0)];
     for (int i = 0; i < arr.GetLength(0); i++)
     {
+        int sum = 0;
         for (int j = 0; j < arr.GetLength(1); j++)
         {
-            for (int k = 0; k < arr.GetLength(1) - 1; k++)
-            {
-                if (arr[i, k] < arr[i, k + 1])
-                {
-                    int temp = arr[i, k + 1];
-                    arr[i, k + 1] = arr[i, k];
-                    arr[i, k] = temp;
-                }
-            }
+            sum += arr[i, j];
+        }
+        minlValue[i] = sum;
+    }
+    return minlValue;
+}
+void Minimal(int[] arr)
+{
+    int valMin = arr[0];
+    int rowIndex = 0;
+    for (int i = 0; i < arr.Length; i++)
+    {
+        
+        if (valMin > arr[i])
+        {
+            
+            valMin = arr[i];
+            rowIndex = i;
         }
     }
+    Console.WriteLine($"{rowIndex + 1},{valMin}");
+    
 }
 Console.Write("Enter the number of rows: ");
 int rowNum = int.Parse(Console.ReadLine()!);
@@ -65,7 +74,7 @@ int stop = int.Parse(Console.ReadLine()!);
 int[,] mass = MassNums(rowNum, columnNum, start, stop);
 
 Print(mass);
-Descending(mass);
 
-Print(mass);
+int[] sumArr = MinSum(mass);
+Minimal(sumArr);
 

@@ -40,13 +40,11 @@ void Descending(int[,] arr)
     {
         for (int j = 0; j < arr.GetLength(1); j++)
         {
-            for (int k = 0; k < arr.GetLength(1) - 1; k++)
+            for (int k = 0; k < arr.GetLength(1) - j - 1; k++)
             {
                 if (arr[i, k] < arr[i, k + 1])
                 {
-                    int temp = arr[i, k + 1];
-                    arr[i, k + 1] = arr[i, k];
-                    arr[i, k] = temp;
+                    (arr[i,k],arr[i,k+1])= (arr[i,k+1],arr[i,k]);
                 }
             }
         }

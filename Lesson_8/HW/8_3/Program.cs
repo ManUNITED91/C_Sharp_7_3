@@ -31,22 +31,22 @@ int[,] MassNums(int row, int column, int from, int to)
     return arr;
 }
 int[,] MatrixTimes(int[,] matr1, int[,] matr2)
-{   
-    int row = matr2.GetLength(0);
-    int column = matr1.GetLength(1);
-    int[,] res = new int[row, column];
-
-    if (column == row)
+{
+    int[,] res = new int[matr1.GetLength(0), matr2.GetLength(1)];
+    int sum = 0;
+    if (matr1.GetLength(1) == matr2.GetLength(0))
     {
         for (int i = 0; i < matr1.GetLength(0); i++)
         {
             for (int j = 0; j < matr2.GetLength(1); j++)
             {
-                res[i,j] = 0;
+                sum = 0;
                 for (int k = 0; k < matr1.GetLength(1); k++)
                 {
-                    res[i,j] += matr1[k,j] * matr2[i, k];
+                    sum += matr1[i, k] * matr2[k, j];
                 }
+                res[i,j] = sum;
+
             }
         }
     }

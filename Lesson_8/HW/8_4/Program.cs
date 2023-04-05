@@ -50,8 +50,14 @@ void DelLineOfMinEl(int[,] arr, int[] arr2)
     for (int i = 0; i < row; i++)
     {
         for (int j = 0; j < column; j++)
-            if (arr2[0] == i || arr2[1] == j) continue;
-            else Console.Write($"{arr[i, j],4}");
+            if (arr2[0] == i || arr2[1] == j) 
+            {
+                continue;
+            }
+            else
+            {
+                Console.Write($"{arr[i, j],4}");
+            }
         Console.WriteLine();
     }
     Console.WriteLine();
